@@ -14,3 +14,6 @@ To get started, run ```carthage update``` in the directory containing the ```Car
 ## Not implemented
 - Continuous code broadcast
 - Database integration
+
+## Workarounds
+- On the receiving device, tap 'Receive'. Then on the broadcasting device, enter a code and tap 'Broadcast'. 
