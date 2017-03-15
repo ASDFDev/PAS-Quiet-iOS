@@ -29,8 +29,7 @@ class ReceiveController: UIViewController {
     
     func receiverCallback(_ data: Data?) -> Void
     {
-        print(String.init(describing: data))
-        let alert = UIAlertController(title: String.init(describing: data), message: "", preferredStyle: UIAlertControllerStyle.alert)
+        let alert = UIAlertController(title: String.init(data: (data)!, encoding: String.Encoding.utf8), message: "", preferredStyle: UIAlertControllerStyle.alert)
         alert.addAction(UIAlertAction(title: "Continue", style: UIAlertActionStyle.default, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }
@@ -49,6 +48,7 @@ class ReceiveController: UIViewController {
         CFRunLoopRun()
         if (receiver != nil) {
             receiver?.close()
+            btnReceive.isEnabled = true
         }
     }
     

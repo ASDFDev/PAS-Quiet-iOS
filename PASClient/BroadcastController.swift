@@ -15,9 +15,7 @@ import QuietModemKit.QMTransmitterConfig
 class BroadcastController: UIViewController {
 
     @IBOutlet weak var btnBroadcast: UIButton!
-    @IBOutlet weak var btnStop: UIButton!
     @IBOutlet weak var txtCode: UITextField!
-    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     var deviceid:String = UIDevice.current.identifierForVendor!.uuidString
     var transmitter:QMFrameTransmitter?
@@ -27,10 +25,6 @@ class BroadcastController: UIViewController {
         super.viewDidLoad()
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(BroadcastController.dismissKeyboard))
         view.addGestureRecognizer(tap)
-        btnBroadcast.isHidden = false
-        txtCode.isHidden = false
-        activityIndicator.isHidden = true
-        btnStop.isHidden = true
     }
 
     override func didReceiveMemoryWarning() {
@@ -41,7 +35,7 @@ class BroadcastController: UIViewController {
         view.endEditing(true)
     }
     
-    @IBAction func startBroadcast(_ sender: UIButton) {
+    @IBAction func startBroadcast(_ sender: Any) {
         if (txtCode.text == "") {
             let alert = UIAlertController(title: "You did not enter a code!", message: "", preferredStyle: UIAlertControllerStyle.alert)
             alert.addAction(UIAlertAction(title: "Close", style: UIAlertActionStyle.default, handler: nil))
@@ -49,28 +43,14 @@ class BroadcastController: UIViewController {
         }
         else
         {
-            let alert = UIAlertController(title: "Ensure that your volume is turned up to broadcast your code. ", message: "", preferredStyle: UIAlertControllerStyle.alert)
-            alert.addAction(UIAlertAction(title: "Continue", style: UIAlertActionStyle.default, handler: nil))
-            self.present(alert, animated: true, completion: nil)
-            btnBroadcast.isHidden = true
-            txtCode.isHidden = true
-            activityIndicator.isHidden = false
-            btnStop.isHidden = false
+            btnBroadcast.isEnabled = false
             let q:QMTransmitterConfig = QMTransmitterConfig.init(key: "ultrasonic-experimental")
-            QMFrameTransmitter.init(config: q)
-            transmitter?.send(self.txtCode.text?.data(using: String.Encoding.utf8))
+            transmitter = QMFrameTransmitter.init(config: q)
+            transmitter?.send(txtCode.text?.data(using: String.Encoding.utf8))
             CFRunLoopRun()
-            // transmitter?.close()
+            transmitter?.close()
+            btnBroadcast.isEnabled = true
         }
-    }
-    
-    @IBAction func stopBroadcast(_ sender: Any) {
-        isStopped = true
-        transmitter?.close()
-        btnBroadcast.isHidden = false
-        txtCode.isHidden = false
-        activityIndicator.isHidden = true
-        btnStop.isHidden = true
     }
     
 }
