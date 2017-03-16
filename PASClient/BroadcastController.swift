@@ -16,17 +16,22 @@ class BroadcastController: UIViewController {
 
     @IBOutlet weak var btnBroadcast: UIButton!
     @IBOutlet weak var txtCode: UITextField!
+    @IBOutlet weak var btnStop: UIButton!
     
     var deviceid:String = UIDevice.current.identifierForVendor!.uuidString
     var transmitter:QMFrameTransmitter?
-    var isStopped:Bool = false
+    var isStopped:Bool = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(BroadcastController.dismissKeyboard))
         view.addGestureRecognizer(tap)
     }
-
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        stopBroadcast(self)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
    }
@@ -44,13 +49,26 @@ class BroadcastController: UIViewController {
         else
         {
             btnBroadcast.isEnabled = false
+            btnStop.isEnabled = true
             let q:QMTransmitterConfig = QMTransmitterConfig.init(key: "ultrasonic-experimental")
             transmitter = QMFrameTransmitter.init(config: q)
-            transmitter?.send(txtCode.text?.data(using: String.Encoding.utf8))
-            CFRunLoopRun()
-            transmitter?.close()
-            btnBroadcast.isEnabled = true
+            isStopped = false
+            DispatchQueue.global().async {
+            while (!self.isStopped) {
+                self.transmitter?.send(self.txtCode.text?.data(using: String.Encoding.utf8))
+                DispatchQueue.main.async {
+                }
+                sleep(2)
+                }
+            }
         }
+    }
+    
+    @IBAction func stopBroadcast(_ sender: Any) {
+        transmitter?.close()
+        isStopped = true
+        btnBroadcast.isEnabled = true
+        btnStop.isEnabled = false
     }
     
 }

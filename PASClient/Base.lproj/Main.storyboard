@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12113" systemVersion="16E189a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12113" systemVersion="16E189a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="QYx-lH-nPf">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -9,7 +9,23 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--PAS Client-->
+        <!--Navigation Controller-->
+        <scene sceneID="te4-Zj-M29">
+            <objects>
+                <navigationController id="er2-Bd-9RU" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="lFI-Kx-cii">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="9pv-A4-QxB" kind="relationship" relationship="rootViewController" id="HEA-Dl-rEc"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="d34-pH-BF5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="470" y="-942"/>
+        </scene>
+        <!--Welcome, STAFF-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
                 <viewController id="9pv-A4-QxB" customClass="BroadcastController" customModule="PASClient" customModuleProvider="target" sceneMemberID="viewController">
@@ -43,18 +59,36 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad" secureTextEntry="YES"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r34-7c-8R6">
+                                <rect key="frame" x="16" y="220" width="343" height="30"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Stop">
+                                    <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="startBroadcast:" destination="9pv-A4-QxB" eventType="touchUpInside" id="L5i-v6-M0n"/>
+                                    <action selector="stopBroadcast:" destination="9pv-A4-QxB" eventType="touchUpInside" id="Vmc-9v-rnv"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" title="PAS Client" id="or4-2l-CVO"/>
+                    <navigationItem key="navigationItem" title="Welcome, STAFF" id="or4-2l-CVO">
+                        <barButtonItem key="rightBarButtonItem" title="Sign out" id="hjb-0N-K1V">
+                            <connections>
+                                <segue destination="QYx-lH-nPf" kind="showDetail" id="bQS-AE-IAe"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="btnBroadcast" destination="JPF-3U-LkK" id="pEz-8P-d9x"/>
+                        <outlet property="btnStop" destination="r34-7c-8R6" id="mZU-2C-zSV"/>
                         <outlet property="txtCode" destination="t8s-fr-gRo" id="cco-kF-pHu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1304.8" y="-330.58470764617692"/>
+            <point key="canvasLocation" x="1185" y="-942"/>
         </scene>
         <!--Administrate-->
         <scene sceneID="z77-G1-z6L">
@@ -66,14 +100,14 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="9rx-ym-1RL" kind="relationship" relationship="rootViewController" id="Tdz-9X-FL2"/>
+                        <segue destination="9rx-ym-1RL" kind="relationship" relationship="rootViewController" id="6Oa-Rb-Zub"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LqK-oU-puh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-663" y="322"/>
+            <point key="canvasLocation" x="-460" y="-32"/>
         </scene>
-        <!--phpMyAdmin-->
+        <!--Welcome, ADMIN-->
         <scene sceneID="3aN-ky-Svy">
             <objects>
                 <viewController id="9rx-ym-1RL" customClass="AdminController" customModule="PASClient" customModuleProvider="target" sceneMemberID="viewController">
@@ -93,7 +127,12 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="phpMyAdmin" id="GKQ-v1-YFn">
+                    <navigationItem key="navigationItem" title="Welcome, ADMIN" id="GKQ-v1-YFn">
+                        <barButtonItem key="leftBarButtonItem" title="Sign out" id="REG-v2-zH4">
+                            <connections>
+                                <segue destination="QYx-lH-nPf" kind="showDetail" id="qZt-Od-eFN"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Refresh" id="fGn-RR-PQi">
                             <connections>
                                 <action selector="reload" destination="zlj-U2-tUs" id="qzN-JQ-5eR"/>
@@ -106,9 +145,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EP9-q7-G5N" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1330" y="322"/>
+            <point key="canvasLocation" x="-1143" y="-33"/>
         </scene>
-        <!--PAS Client-->
+        <!--Welcome, STUDENT-->
         <scene sceneID="wg7-f3-ORb">
             <objects>
                 <viewController id="8rJ-Kc-sve" customClass="ReceiveController" customModule="PASClient" customModuleProvider="target" sceneMemberID="viewController">
@@ -120,7 +159,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Select the button above to receive an attendance code. You may need to grant microphone access." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BnO-Pu-B3Q">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Select the button below to receive an attendance code. You will need to grant microphone access." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BnO-Pu-B3Q">
                                 <rect key="frame" x="16" y="72" width="343" height="62"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -138,51 +177,87 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" title="PAS Client" id="865-Y9-PXU"/>
+                    <navigationItem key="navigationItem" title="Welcome, STUDENT" id="865-Y9-PXU">
+                        <barButtonItem key="rightBarButtonItem" title="Sign out" id="LBk-rn-yXR">
+                            <connections>
+                                <segue destination="QYx-lH-nPf" kind="showDetail" id="dq2-ac-63z"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="btnReceive" destination="Ija-T0-OML" id="QRP-oy-hO5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1304.8" y="322.48875562218893"/>
+            <point key="canvasLocation" x="1185" y="-250"/>
         </scene>
-        <!--Tab Bar Controller-->
-        <scene sceneID="yl2-sM-qoP">
+        <!--Navigation Controller-->
+        <scene sceneID="lOa-pM-GAi">
             <objects>
-                <tabBarController id="49e-Tb-3d3" sceneMemberID="viewController">
-                    <nil key="simulatedBottomBarMetrics"/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
-                        <rect key="frame" x="0.0" y="975" width="768" height="49"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
-                    </tabBar>
-                    <connections>
-                        <segue destination="oCq-9S-3Pb" kind="relationship" relationship="viewControllers" id="HD3-mb-Q9T"/>
-                        <segue destination="DVa-tg-Lc8" kind="relationship" relationship="viewControllers" id="i1B-5C-kVt"/>
-                        <segue destination="gvh-Uj-ZcJ" kind="relationship" relationship="viewControllers" id="p19-5K-Wuq"/>
-                    </connections>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="0.0" y="0.0"/>
-        </scene>
-        <!--Broadcast-->
-        <scene sceneID="ll7-2l-ria">
-            <objects>
-                <navigationController id="oCq-9S-3Pb" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Broadcast" id="4bG-L6-tSb"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Wbr-Jp-I81">
+                <navigationController id="QYx-lH-nPf" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="J9N-b9-NFd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="9pv-A4-QxB" kind="relationship" relationship="rootViewController" id="p56-pS-CzV"/>
+                        <segue destination="mzK-PM-GNM" kind="relationship" relationship="rootViewController" id="UoU-OJ-ApQ"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Q44-tq-IHX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="E1w-PZ-gAK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="662" y="-331"/>
+            <point key="canvasLocation" x="-1143" y="-699"/>
+        </scene>
+        <!--Login to PAS-->
+        <scene sceneID="g4k-eA-dWj">
+            <objects>
+                <viewController id="mzK-PM-GNM" customClass="LoginController" customModule="PASClient" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="LjC-C0-4M2"/>
+                        <viewControllerLayoutGuide type="bottom" id="8B6-vc-RSA"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="jsz-DU-vD3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jjr-NC-lUz">
+                                <rect key="frame" x="16" y="72" width="343" height="30"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DuK-Xm-8XB">
+                                <rect key="frame" x="16" y="110" width="343" height="30"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s8D-dQ-HXS">
+                                <rect key="frame" x="16" y="148" width="343" height="30"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Sign in"/>
+                                <connections>
+                                    <action selector="signIn:" destination="mzK-PM-GNM" eventType="touchUpInside" id="Jma-Kh-5nr"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Login to PAS" id="9J7-qb-dKx"/>
+                    <connections>
+                        <outlet property="btnLogin" destination="s8D-dQ-HXS" id="9Ff-Wv-zKw"/>
+                        <outlet property="txtPassword" destination="DuK-Xm-8XB" id="c9K-W0-xOG"/>
+                        <outlet property="txtUsername" destination="jjr-NC-lUz" id="5f8-KE-eG3"/>
+                        <segue destination="er2-Bd-9RU" kind="showDetail" identifier="signInStaff" id="L0h-p5-xCV"/>
+                        <segue destination="DVa-tg-Lc8" kind="showDetail" identifier="signInStudent" id="D5S-qA-Y4s"/>
+                        <segue destination="gvh-Uj-ZcJ" kind="showDetail" identifier="signInAdmin" id="F9c-ag-8IT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LIX-EZ-jJO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-460" y="-699.40029985007504"/>
         </scene>
         <!--Receive-->
         <scene sceneID="TgR-mD-RvJ">
@@ -199,7 +274,10 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oMO-56-DsM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="662" y="322"/>
+            <point key="canvasLocation" x="470" y="-250"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="dq2-ac-63z"/>
+    </inferredMetricsTieBreakers>
 </document>

@@ -22,7 +22,14 @@ class ReceiveController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
    }
-
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        if (receiver != nil) {
+            receiver?.close()
+            btnReceive.isEnabled = true
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
@@ -32,6 +39,10 @@ class ReceiveController: UIViewController {
         let alert = UIAlertController(title: String.init(data: (data)!, encoding: String.Encoding.utf8), message: "", preferredStyle: UIAlertControllerStyle.alert)
         alert.addAction(UIAlertAction(title: "Continue", style: UIAlertActionStyle.default, handler: nil))
         self.present(alert, animated: true, completion: nil)
+        if (receiver != nil) {
+            receiver?.close()
+            btnReceive.isEnabled = true
+        }
     }
     
     func requestCallback(_: Bool)
@@ -45,11 +56,6 @@ class ReceiveController: UIViewController {
     {
         btnReceive.isEnabled = false
         AVAudioSession.sharedInstance().requestRecordPermission(requestCallback)
-        CFRunLoopRun()
-        if (receiver != nil) {
-            receiver?.close()
-            btnReceive.isEnabled = true
-        }
     }
     
 }

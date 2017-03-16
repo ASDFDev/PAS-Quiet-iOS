@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D08AD3551E7A1E9A005E90CF /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08AD3541E7A1E9A005E90CF /* LoginController.swift */; };
 		D0D6361D1E79481400647001 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D6361C1E79481400647001 /* AppDelegate.swift */; };
 		D0D6361F1E79481400647001 /* BroadcastController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D6361E1E79481400647001 /* BroadcastController.swift */; };
 		D0D636211E79481400647001 /* ReceiveController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D636201E79481400647001 /* ReceiveController.swift */; };
@@ -33,6 +34,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		D08AD3541E7A1E9A005E90CF /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		D0C6126C1E798DD8009BDE6F /* PASClient.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PASClient.entitlements; sourceTree = "<group>"; };
 		D0D636191E79481400647001 /* PASClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PASClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0D6361C1E79481400647001 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -95,6 +97,7 @@
 				D0D636271E79481400647001 /* LaunchScreen.storyboard */,
 				D0D6362A1E79481400647001 /* Info.plist */,
 				D0D636301E79490600647001 /* AdminController.swift */,
+				D08AD3541E7A1E9A005E90CF /* LoginController.swift */,
 			);
 			path = PASClient;
 			sourceTree = "<group>";
@@ -200,6 +203,7 @@
 				D0D636311E79490600647001 /* AdminController.swift in Sources */,
 				D0D6361D1E79481400647001 /* AppDelegate.swift in Sources */,
 				D0D6361F1E79481400647001 /* BroadcastController.swift in Sources */,
+				D08AD3551E7A1E9A005E90CF /* LoginController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
