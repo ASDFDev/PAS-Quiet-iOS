@@ -1,11 +1,12 @@
 //
 //  LoginController.swift
-//  PASClient
+//  PAS
 //
 //  Created by Justin Xin on 16/3/17.
 //  Copyright © 2017 Tsubuzaki. All rights reserved.
 //
 
+import Foundation
 import UIKit
 
 class LoginController: UIViewController {
@@ -15,7 +16,19 @@ class LoginController: UIViewController {
     @IBOutlet weak var btnLogin: UIButton!
     
     override func viewDidLoad() {
+        Reachability.isConnectedToNetwork { success in
+            if success {
+            } else {
+                let alert = UIAlertController(title: "Please connect to a PAS-enabled network to use this app.", message: "", preferredStyle: UIAlertControllerStyle.alert)
+                alert.addAction(UIAlertAction(title: "Learn more", style: UIAlertActionStyle.default, handler: { action in
+                    UIApplication.shared.open(URL.init(string: "https://github.com/emansih/ATS_Backend")!)
+                    }
+                ))
+                alert.addAction(UIAlertAction(title: "Continue anyway", style: UIAlertActionStyle.destructive, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+            }
         super.viewDidLoad()
+    }
     }
     
     override func didReceiveMemoryWarning() {

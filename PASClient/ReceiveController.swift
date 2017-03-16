@@ -1,6 +1,6 @@
 //
 //  ReceiveController.swift
-//  PASClient
+//  PAS
 //
 //  Created by Justin Xin on 15/3/17.
 //  Copyright © 2017 Tsubuzaki. All rights reserved.
@@ -16,6 +16,13 @@ class ReceiveController: UIViewController {
     
     @IBOutlet weak var btnReceive: UIButton!
     
+    // HTTP Response Codes
+    //
+    // 429 == Submission already exists
+    // 200 == Submission success
+    // 500 == Submission error
+    
+    let atsURL:String = "http://ats.nearby.com.sg"
     var deviceid:String = UIDevice.current.identifierForVendor!.uuidString
     var receiver: QMFrameReceiver?
     

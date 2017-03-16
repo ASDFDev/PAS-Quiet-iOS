@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  PASClient
+//  PAS
 //
 //  Created by Justin Xin on 15/3/17.
 //  Copyright © 2017 Tsubuzaki. All rights reserved.
