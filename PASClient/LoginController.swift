@@ -35,6 +35,14 @@ class LoginController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "signInStudent") {
+            let n = segue.destination as! UINavigationController
+            let c = n.viewControllers[0] as! ReceiveController
+            c.updateUserID(newUserID: txtUsername.text!)
+        }
+    }
+    
     @IBAction func signIn(_ sender: Any) {
         if (txtUsername.text == "s10001" && txtPassword.text == "staff") {
         performSegue(withIdentifier: "signInStaff", sender: self)
