@@ -68,12 +68,9 @@ class ReceiveController: UIViewController {
                     alert.addAction(UIAlertAction(title: "Close", style: UIAlertActionStyle.default, handler: nil))
                     self.present(alert, animated: true, completion: nil)
                 } else {
-                    let alert = UIAlertController(title: "Submission error, please try again later.", message: "", preferredStyle: UIAlertControllerStyle.alert)
+                    let alert = UIAlertController(title: ("Submission error, please try again later. Error: " + String.init(statusCode)), message: "", preferredStyle: UIAlertControllerStyle.alert)
                     alert.addAction(UIAlertAction(title: "Close", style: UIAlertActionStyle.default, handler: nil))
                     self.present(alert, animated: true, completion: nil)
-                    print("\(x)")
-                    print("\(e)")
-                    print(statusCode)
                 }
             }
         })
