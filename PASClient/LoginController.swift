@@ -16,19 +16,19 @@ class LoginController: UIViewController {
     @IBOutlet weak var btnLogin: UIButton!
     
     override func viewDidLoad() {
+        super.viewDidLoad()
         Reachability.isConnectedToNetwork { success in
             if success {
             } else {
                 let alert = UIAlertController(title: "Please connect to a PAS-enabled network to use this app.", message: "", preferredStyle: UIAlertControllerStyle.alert)
                 alert.addAction(UIAlertAction(title: "Learn more", style: UIAlertActionStyle.default, handler: { action in
                     UIApplication.shared.open(URL.init(string: "https://github.com/emansih/ATS_Backend")!)
-                    }
+                }
                 ))
                 alert.addAction(UIAlertAction(title: "Continue anyway", style: UIAlertActionStyle.destructive, handler: nil))
                 self.present(alert, animated: true, completion: nil)
             }
-        super.viewDidLoad()
-    }
+        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -44,13 +44,13 @@ class LoginController: UIViewController {
     }
     
     @IBAction func signIn(_ sender: Any) {
-        if (txtUsername.text == "s10001" && txtPassword.text == "staff") {
-        performSegue(withIdentifier: "signInStaff", sender: self)
-        } else if (txtUsername.text == "p1000000" && txtPassword.text == "student") {
-            performSegue(withIdentifier: "signInStudent", sender: self)
-        } else if (txtUsername.text == "admin" && txtPassword.text == "admin") {
-            performSegue(withIdentifier: "signInAdmin", sender: self)
-        } else if (txtUsername.text == "" || txtPassword.text == "") {
+        if (self.txtUsername.text == "s10001" && self.txtPassword.text == "staff") {
+            self.performSegue(withIdentifier: "signInStaff", sender: self)
+        } else if (self.txtUsername.text == "p1000000" && self.txtPassword.text == "student") {
+            self.performSegue(withIdentifier: "signInStudent", sender: self)
+        } else if (self.txtUsername.text == "admin" && self.txtPassword.text == "admin") {
+            self.performSegue(withIdentifier: "signInAdmin", sender: self)
+        } else if (self.txtUsername.text == "" || self.txtPassword.text == "") {
             let alert = UIAlertController(title: "Please enter your username and password", message: "", preferredStyle: UIAlertControllerStyle.alert)
             alert.addAction(UIAlertAction(title: "Try again", style: UIAlertActionStyle.default, handler: nil))
             self.present(alert, animated: true, completion: nil)

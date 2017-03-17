@@ -29,7 +29,7 @@ class ReceiveController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-   }
+    }
     
     override func viewDidDisappear(_ animated: Bool) {
         if (receiver != nil) {
@@ -48,32 +48,35 @@ class ReceiveController: UIViewController {
     
     func receiverCallback(_ data: Data?) -> Void
     {
-        let p = ["device_id":deviceid, "username":userid, "attendance_code":String.init(data: (data)!, encoding: String.Encoding.utf8)!] as Dictionary<String, String>
+        let p:String = "device_id=" + deviceid + "&username=" + userid + "&attendance_code=" + String.init(data: (data)!, encoding: String.Encoding.utf8)!
         let u: URL = URL.init(string: atsURL + "/AttendanceDatabase.php")!
         var r:URLRequest = URLRequest(url: u)
-        let s = URLSession.shared
         r.httpMethod = "POST"
-        r.httpBody = try? JSONSerialization.data(withJSONObject: p, options: [])
-        r.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        r.addValue("application/json", forHTTPHeaderField: "Accept")
-        let task = s.dataTask(with: r, completionHandler: {d,e,x in
-            if let HTTPResponse = e as? HTTPURLResponse {
-                let statusCode = HTTPResponse.statusCode
-                if (statusCode == 200) {
+        r.httpBody = p.data(using: String.Encoding.utf8, allowLossyConversion: false)
+        let task = URLSession.shared.dataTask(with: r) { data, response, error in
+            guard let _ = data, error == nil else {
+                let alert = UIAlertController(title: "Unknown error, please try again later.", message: "", preferredStyle: UIAlertControllerStyle.alert)
+                alert.addAction(UIAlertAction(title: "Close", style: UIAlertActionStyle.default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+                return
+            }
+            if let t = response as? HTTPURLResponse {
+                switch (t.statusCode) {
+                case 200:
                     let alert = UIAlertController(title: "Welcome to class!", message: "", preferredStyle: UIAlertControllerStyle.alert)
                     alert.addAction(UIAlertAction(title: "Close", style: UIAlertActionStyle.default, handler: nil))
                     self.present(alert, animated: true, completion: nil)
-                } else if (statusCode == 429) {
+                case 429:
                     let alert = UIAlertController(title: "You cannot submit your attendance twice!", message: "", preferredStyle: UIAlertControllerStyle.alert)
                     alert.addAction(UIAlertAction(title: "Close", style: UIAlertActionStyle.default, handler: nil))
                     self.present(alert, animated: true, completion: nil)
-                } else {
-                    let alert = UIAlertController(title: ("Submission error, please try again later. Error: " + String.init(statusCode)), message: "", preferredStyle: UIAlertControllerStyle.alert)
+                default:
+                    let alert = UIAlertController(title: ("Submission error, please try again later. Error: " + String.init(t.statusCode)), message: "", preferredStyle: UIAlertControllerStyle.alert)
                     alert.addAction(UIAlertAction(title: "Close", style: UIAlertActionStyle.default, handler: nil))
                     self.present(alert, animated: true, completion: nil)
                 }
             }
-        })
+        }
         task.resume()
         if (receiver != nil) {
             receiver?.close()
@@ -88,7 +91,7 @@ class ReceiveController: UIViewController {
         receiver?.setReceiveCallback(receiverCallback)
     }
     
-    @IBAction func startReceive(_ sender: UIButton) 
+    @IBAction func startReceive(_ sender: UIButton)
     {
         btnReceive.isEnabled = false
         AVAudioSession.sharedInstance().requestRecordPermission(requestCallback)
