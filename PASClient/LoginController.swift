@@ -46,7 +46,9 @@ class LoginController: UIViewController {
     @IBAction func signIn(_ sender: Any) {
         if (self.txtUsername.text == "s10001" && self.txtPassword.text == "staff") {
             self.performSegue(withIdentifier: "signInStaff", sender: self)
-        } else if (self.txtUsername.text == "p1000000" && self.txtPassword.text == "student") {
+        } else if (self.txtUsername.text == "p10000" && self.txtPassword.text == "student") {
+            self.performSegue(withIdentifier: "signInStudent", sender: self)
+        } else if (self.txtUsername.text == "p10002" && self.txtPassword.text == "student") {
             self.performSegue(withIdentifier: "signInStudent", sender: self)
         } else if (self.txtUsername.text == "admin" && self.txtPassword.text == "admin") {
             self.performSegue(withIdentifier: "signInAdmin", sender: self)
