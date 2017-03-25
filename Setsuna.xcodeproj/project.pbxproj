@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D031104C1E86920200C7A2B5 /* NonConnectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D031104B1E86920200C7A2B5 /* NonConnectionController.swift */; };
 		D0756F351E7A7EE500F2CF75 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0756F341E7A7EE500F2CF75 /* Reachability.swift */; };
 		D08AD3551E7A1E9A005E90CF /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08AD3541E7A1E9A005E90CF /* LoginController.swift */; };
 		D0D6361D1E79481400647001 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D6361C1E79481400647001 /* AppDelegate.swift */; };
@@ -35,10 +36,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		D031104B1E86920200C7A2B5 /* NonConnectionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NonConnectionController.swift; sourceTree = "<group>"; };
 		D0756F341E7A7EE500F2CF75 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		D08AD3541E7A1E9A005E90CF /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
-		D0C6126C1E798DD8009BDE6F /* PAS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PAS.entitlements; sourceTree = "<group>"; };
-		D0D636191E79481400647001 /* PASClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PASClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D0C6126C1E798DD8009BDE6F /* Setsuna.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Setsuna.entitlements; sourceTree = "<group>"; };
+		D0D636191E79481400647001 /* SetsunaClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SetsunaClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0D6361C1E79481400647001 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D0D6361E1E79481400647001 /* BroadcastController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BroadcastController.swift; sourceTree = "<group>"; };
 		D0D636201E79481400647001 /* ReceiveController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiveController.swift; sourceTree = "<group>"; };
@@ -73,7 +75,7 @@
 			isa = PBXGroup;
 			children = (
 				D0D636321E794B7000647001 /* QuietModemKit.framework */,
-				D0D6361B1E79481400647001 /* PAS */,
+				D0D6361B1E79481400647001 /* Setsuna */,
 				D0D6361A1E79481400647001 /* Products */,
 				D0C6126D1E798DD8009BDE6F /* Frameworks */,
 			);
@@ -82,15 +84,15 @@
 		D0D6361A1E79481400647001 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D0D636191E79481400647001 /* PASClient.app */,
+				D0D636191E79481400647001 /* SetsunaClient.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		D0D6361B1E79481400647001 /* PAS */ = {
+		D0D6361B1E79481400647001 /* Setsuna */ = {
 			isa = PBXGroup;
 			children = (
-				D0C6126C1E798DD8009BDE6F /* PAS.entitlements */,
+				D0C6126C1E798DD8009BDE6F /* Setsuna.entitlements */,
 				D0D6361C1E79481400647001 /* AppDelegate.swift */,
 				D0D6361E1E79481400647001 /* BroadcastController.swift */,
 				D0D636201E79481400647001 /* ReceiveController.swift */,
@@ -101,17 +103,18 @@
 				D0D636301E79490600647001 /* AdminController.swift */,
 				D08AD3541E7A1E9A005E90CF /* LoginController.swift */,
 				D0756F341E7A7EE500F2CF75 /* Reachability.swift */,
+				D031104B1E86920200C7A2B5 /* NonConnectionController.swift */,
 			);
-			name = PAS;
+			name = Setsuna;
 			path = PASClient;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		D0D636181E79481400647001 /* PASClient */ = {
+		D0D636181E79481400647001 /* SetsunaClient */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D0D6362D1E79481400647001 /* Build configuration list for PBXNativeTarget "PASClient" */;
+			buildConfigurationList = D0D6362D1E79481400647001 /* Build configuration list for PBXNativeTarget "SetsunaClient" */;
 			buildPhases = (
 				D0D636151E79481400647001 /* Sources */,
 				D0D636161E79481400647001 /* Frameworks */,
@@ -123,9 +126,9 @@
 			);
 			dependencies = (
 			);
-			name = PASClient;
+			name = SetsunaClient;
 			productName = PASClient;
-			productReference = D0D636191E79481400647001 /* PASClient.app */;
+			productReference = D0D636191E79481400647001 /* SetsunaClient.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -150,7 +153,7 @@
 					};
 				};
 			};
-			buildConfigurationList = D0D636141E79481300647001 /* Build configuration list for PBXProject "PAS" */;
+			buildConfigurationList = D0D636141E79481300647001 /* Build configuration list for PBXProject "Setsuna" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -163,7 +166,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				D0D636181E79481400647001 /* PASClient */,
+				D0D636181E79481400647001 /* SetsunaClient */,
 			);
 		};
 /* End PBXProject section */
@@ -204,6 +207,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D0D636211E79481400647001 /* ReceiveController.swift in Sources */,
+				D031104C1E86920200C7A2B5 /* NonConnectionController.swift in Sources */,
 				D0D636311E79490600647001 /* AdminController.swift in Sources */,
 				D0756F351E7A7EE500F2CF75 /* Reachability.swift in Sources */,
 				D0D6361D1E79481400647001 /* AppDelegate.swift in Sources */,
@@ -339,7 +343,7 @@
 				INFOPLIST_FILE = PASClient/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.tsubuzaki.PASClient;
+				PRODUCT_BUNDLE_IDENTIFIER = com.asdf.setsuna.client;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -357,7 +361,7 @@
 				INFOPLIST_FILE = PASClient/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.tsubuzaki.PASClient;
+				PRODUCT_BUNDLE_IDENTIFIER = com.asdf.setsuna.client;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -366,7 +370,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		D0D636141E79481300647001 /* Build configuration list for PBXProject "PAS" */ = {
+		D0D636141E79481300647001 /* Build configuration list for PBXProject "Setsuna" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D0D6362B1E79481400647001 /* Debug */,
@@ -375,7 +379,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D0D6362D1E79481400647001 /* Build configuration list for PBXNativeTarget "PASClient" */ = {
+		D0D6362D1E79481400647001 /* Build configuration list for PBXNativeTarget "SetsunaClient" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D0D6362E1E79481400647001 /* Debug */,
