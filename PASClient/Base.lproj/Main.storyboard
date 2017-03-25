@@ -13,9 +13,11 @@
         <scene sceneID="te4-Zj-M29">
             <objects>
                 <navigationController id="er2-Bd-9RU" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="lFI-Kx-cii">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" barStyle="black" id="lFI-Kx-cii">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="1" green="1" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="1" green="0.40000000000000002" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <connections>
                         <segue destination="9pv-A4-QxB" kind="relationship" relationship="rootViewController" id="HEA-Dl-rEc"/>
@@ -72,6 +74,7 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" red="1" green="0.40000000000000002" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" title="Welcome to Setsuna" id="or4-2l-CVO">
                         <barButtonItem key="rightBarButtonItem" title="Sign out" id="hjb-0N-K1V">
@@ -95,9 +98,11 @@
             <objects>
                 <navigationController id="gvh-Uj-ZcJ" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Administrate" id="rRT-Vp-VRu"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="grY-p6-LN2">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" barStyle="black" id="grY-p6-LN2">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="1" green="1" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="1" green="0.40000000000000002" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <connections>
                         <segue destination="9rx-ym-1RL" kind="relationship" relationship="rootViewController" id="6Oa-Rb-Zub"/>
@@ -126,6 +131,7 @@
                             </webView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" red="1" green="0.40000000000000002" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" title="Setsuna Admin Panel" id="GKQ-v1-YFn">
                         <barButtonItem key="leftBarButtonItem" title="Sign out" id="REG-v2-zH4">
@@ -176,6 +182,7 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" red="1" green="0.40000000000000002" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" title="Welcome to Setsuna" id="865-Y9-PXU">
                         <barButtonItem key="rightBarButtonItem" title="Sign out" id="LBk-rn-yXR">
@@ -196,9 +203,11 @@
         <scene sceneID="lOa-pM-GAi">
             <objects>
                 <navigationController id="QYx-lH-nPf" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="J9N-b9-NFd">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" barStyle="black" id="J9N-b9-NFd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="1" green="1" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="1" green="0.40000000000000002" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <connections>
                         <segue destination="mzK-PM-GNM" kind="relationship" relationship="rootViewController" id="UoU-OJ-ApQ"/>
@@ -212,9 +221,11 @@
         <scene sceneID="gq9-TD-aao">
             <objects>
                 <navigationController id="mlM-mn-WVW" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="bw6-8J-OqG">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" barStyle="black" id="bw6-8J-OqG">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="1" green="1" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="8pq-F0-LkP">
                         <rect key="frame" x="0.0" y="623" width="375" height="44"/>
@@ -272,6 +283,7 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" red="1" green="0.40000000000000002" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" title="Error establishing connection" id="Dwz-Ae-sNf"/>
                     <connections>
@@ -320,7 +332,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Welcome to Setsuna! Please wait while we try to connect to a Setsuna-enabled server..." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a7A-Ty-Anp">
-                                <rect key="frame" x="16" y="324" width="343" height="19"/>
+                                <rect key="frame" x="16" y="324" width="343" height="67"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -332,6 +344,7 @@
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" red="1" green="0.40000000000000002" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" title="Setsuna Attendance" id="9J7-qb-dKx"/>
                     <connections>
@@ -355,9 +368,11 @@
             <objects>
                 <navigationController id="DVa-tg-Lc8" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Receive" id="c2H-3a-P47"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Lua-rb-GgF">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" barStyle="black" id="Lua-rb-GgF">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="1" green="1" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="1" green="0.40000000000000002" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <connections>
                         <segue destination="8rJ-Kc-sve" kind="relationship" relationship="rootViewController" id="xuC-K9-9WH"/>
@@ -372,6 +387,6 @@
         <image name="NoServerImage" width="250" height="250"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="dq2-ac-63z"/>
+        <segue reference="xDI-9G-1ge"/>
     </inferredMetricsTieBreakers>
 </document>
