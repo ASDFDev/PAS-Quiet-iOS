@@ -15,18 +15,30 @@ class LoginController: UIViewController {
     @IBOutlet weak var txtPassword: UITextField!
     @IBOutlet weak var btnLogin: UIButton!
     @IBOutlet weak var lblWelcomeText: UILabel!
+    @IBOutlet weak var imgBanner: UIImageView!
+    
+    var bypassServerCheck: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         lblWelcomeText.sizeToFit()
-        Reachability.isConnectedToNetwork { success in
-            if success {
-                self.txtUsername.isEnabled = true
-                self.txtUsername.isEnabled = true
-                self.btnLogin.isEnabled = true
-            } else {
-                self.performSegue(withIdentifier: "showNonConnection", sender: self)
+        if (!bypassServerCheck) {
+            Reachability.isConnectedToNetwork { success in
+                if success {
+                    self.txtUsername.isEnabled = true
+                    self.txtPassword.isEnabled = true
+                    self.btnLogin.isEnabled = true
+                } else {
+                    self.performSegue(withIdentifier: "showNonConnection", sender: self)
+                }
             }
+        } else {
+            txtUsername.isEnabled = true
+            txtPassword.isEnabled = true
+            btnLogin.isEnabled = true
+            imgBanner.image = #imageLiteral(resourceName: "TestServerImage")
+            lblWelcomeText.text = "Welcome to Setsuna! The Setsuna server is currently not available, and functions may not work as expected."
+            lblWelcomeText.sizeToFit()
         }
     }
     
@@ -40,6 +52,10 @@ class LoginController: UIViewController {
             let c = n.viewControllers[0] as! ReceiveController
             c.updateUserID(newUserID: txtUsername.text!)
         }
+    }
+    
+    func setBypassServer(setting: Bool) {
+        bypassServerCheck = setting
     }
     
     @IBAction func signIn(_ sender: Any) {

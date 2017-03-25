@@ -25,7 +25,7 @@
             </objects>
             <point key="canvasLocation" x="470" y="-942"/>
         </scene>
-        <!--Welcome, STAFF-->
+        <!--Welcome to Setsuna-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
                 <viewController modalTransitionStyle="flipHorizontal" id="9pv-A4-QxB" customClass="BroadcastController" customModule="SetsunaClient" customModuleProvider="target" sceneMemberID="viewController">
@@ -73,7 +73,7 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Welcome, STAFF" id="or4-2l-CVO">
+                    <navigationItem key="navigationItem" title="Welcome to Setsuna" id="or4-2l-CVO">
                         <barButtonItem key="rightBarButtonItem" title="Sign out" id="hjb-0N-K1V">
                             <connections>
                                 <segue destination="QYx-lH-nPf" kind="showDetail" id="bQS-AE-IAe"/>
@@ -107,7 +107,7 @@
             </objects>
             <point key="canvasLocation" x="-460" y="-32"/>
         </scene>
-        <!--Welcome, ADMIN-->
+        <!--Setsuna Admin Panel-->
         <scene sceneID="3aN-ky-Svy">
             <objects>
                 <viewController modalTransitionStyle="flipHorizontal" id="9rx-ym-1RL" customClass="AdminController" customModule="SetsunaClient" customModuleProvider="target" sceneMemberID="viewController">
@@ -127,7 +127,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Welcome, ADMIN" id="GKQ-v1-YFn">
+                    <navigationItem key="navigationItem" title="Setsuna Admin Panel" id="GKQ-v1-YFn">
                         <barButtonItem key="leftBarButtonItem" title="Sign out" id="REG-v2-zH4">
                             <connections>
                                 <segue destination="QYx-lH-nPf" kind="showDetail" id="qZt-Od-eFN"/>
@@ -147,7 +147,7 @@
             </objects>
             <point key="canvasLocation" x="-1143" y="-33"/>
         </scene>
-        <!--Welcome, STUDENT-->
+        <!--Welcome to Setsuna-->
         <scene sceneID="wg7-f3-ORb">
             <objects>
                 <viewController modalTransitionStyle="flipHorizontal" id="8rJ-Kc-sve" customClass="ReceiveController" customModule="SetsunaClient" customModuleProvider="target" sceneMemberID="viewController">
@@ -177,10 +177,10 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Welcome, STUDENT" id="865-Y9-PXU">
+                    <navigationItem key="navigationItem" title="Welcome to Setsuna" id="865-Y9-PXU">
                         <barButtonItem key="rightBarButtonItem" title="Sign out" id="LBk-rn-yXR">
                             <connections>
-                                <segue destination="QYx-lH-nPf" kind="showDetail" id="dq2-ac-63z"/>
+                                <segue destination="QYx-lH-nPf" kind="showDetail" identifier="" id="dq2-ac-63z"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -208,7 +208,27 @@
             </objects>
             <point key="canvasLocation" x="-1143" y="-699"/>
         </scene>
-        <!--Non Connection Controller-->
+        <!--Navigation Controller-->
+        <scene sceneID="gq9-TD-aao">
+            <objects>
+                <navigationController id="mlM-mn-WVW" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="bw6-8J-OqG">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="8pq-F0-LkP">
+                        <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
+                    <connections>
+                        <segue destination="bZb-Uf-5Tu" kind="relationship" relationship="rootViewController" id="WfR-uB-LhM"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0qk-yr-iYx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1143" y="-1455"/>
+        </scene>
+        <!--Error establishing connection-->
         <scene sceneID="7ig-05-bJH">
             <objects>
                 <viewController modalTransitionStyle="crossDissolve" id="bZb-Uf-5Tu" customClass="NonConnectionController" customModule="SetsunaClient" customModuleProvider="target" sceneMemberID="viewController">
@@ -221,19 +241,29 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YgU-qM-gfg">
-                                <rect key="frame" x="16" y="629" width="343" height="30"/>
+                                <rect key="frame" x="16" y="591" width="343" height="30"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <state key="normal" title="Try again"/>
                                 <connections>
-                                    <segue destination="mzK-PM-GNM" kind="showDetail" animates="NO" action="showViewController:sender:" id="rH9-uc-D7d"/>
+                                    <segue destination="QYx-lH-nPf" kind="showDetail" animates="NO" id="iXz-QD-bg7"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qbu-KS-4fc">
+                                <rect key="frame" x="16" y="629" width="343" height="30"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <state key="normal" title="Continue anyway">
+                                    <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="continueAnyway:" destination="bZb-Uf-5Tu" eventType="touchUpInside" id="4Wx-wq-DXg"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="NoServerImage" translatesAutoresizingMaskIntoConstraints="NO" id="1kL-W0-qbz">
-                                <rect key="frame" x="67" y="28" width="240" height="240"/>
+                                <rect key="frame" x="67" y="72" width="240" height="240"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4AV-2f-sUD">
-                                <rect key="frame" x="16" y="276" width="343" height="19"/>
+                                <rect key="frame" x="16" y="320" width="343" height="19"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <string key="text">Setsuna is not available for your school/enterprise, or you're not connected to a Setsuna-enabled server. Please try again later, or connect to your school/enterprise's server to continue.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -243,13 +273,17 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Error establishing connection" id="Dwz-Ae-sNf"/>
                     <connections>
+                        <outlet property="btnContinueAnyway" destination="qbu-KS-4fc" id="Tf1-qP-Baq"/>
+                        <outlet property="btnTryAgain" destination="YgU-qM-gfg" id="NR3-4t-M3e"/>
                         <outlet property="lblErrorInfo" destination="4AV-2f-sUD" id="dmw-JP-f7i"/>
+                        <segue destination="QYx-lH-nPf" kind="showDetail" identifier="continueWithBypass" animates="NO" id="xDI-9G-1ge"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mhf-4C-q4u" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-460" y="-1370.4647676161919"/>
+            <point key="canvasLocation" x="-460" y="-1455"/>
         </scene>
         <!--Setsuna Attendance-->
         <scene sceneID="g4k-eA-dWj">
@@ -302,13 +336,14 @@
                     <navigationItem key="navigationItem" title="Setsuna Attendance" id="9J7-qb-dKx"/>
                     <connections>
                         <outlet property="btnLogin" destination="s8D-dQ-HXS" id="9Ff-Wv-zKw"/>
+                        <outlet property="imgBanner" destination="ywJ-jB-9Bn" id="1HQ-TR-KNj"/>
                         <outlet property="lblWelcomeText" destination="a7A-Ty-Anp" id="Z0e-Bn-j0V"/>
                         <outlet property="txtPassword" destination="DuK-Xm-8XB" id="c9K-W0-xOG"/>
                         <outlet property="txtUsername" destination="jjr-NC-lUz" id="5f8-KE-eG3"/>
                         <segue destination="er2-Bd-9RU" kind="showDetail" identifier="signInStaff" id="L0h-p5-xCV"/>
                         <segue destination="DVa-tg-Lc8" kind="showDetail" identifier="signInStudent" id="D5S-qA-Y4s"/>
                         <segue destination="gvh-Uj-ZcJ" kind="showDetail" identifier="signInAdmin" id="F9c-ag-8IT"/>
-                        <segue destination="bZb-Uf-5Tu" kind="showDetail" identifier="showNonConnection" id="MBM-tS-Krc"/>
+                        <segue destination="mlM-mn-WVW" kind="showDetail" identifier="showNonConnection" id="9gG-id-Vwl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LIX-EZ-jJO" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -337,7 +372,6 @@
         <image name="NoServerImage" width="250" height="250"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="rH9-uc-D7d"/>
-        <segue reference="qZt-Od-eFN"/>
+        <segue reference="dq2-ac-63z"/>
     </inferredMetricsTieBreakers>
 </document>
