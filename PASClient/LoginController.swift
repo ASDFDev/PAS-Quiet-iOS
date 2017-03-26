@@ -14,14 +14,13 @@ class LoginController: UIViewController {
     @IBOutlet weak var txtUsername: UITextField!
     @IBOutlet weak var txtPassword: UITextField!
     @IBOutlet weak var btnLogin: UIButton!
+    @IBOutlet weak var navItem: UINavigationItem!
     @IBOutlet weak var lblWelcomeText: UILabel!
     @IBOutlet weak var imgBanner: UIImageView!
     
     var bypassServerCheck: Bool = false
     
     override func viewDidLoad() {
-        super.viewDidLoad()
-        lblWelcomeText.sizeToFit()
         if (!bypassServerCheck) {
             Reachability.isConnectedToNetwork { success in
                 if success {
@@ -36,10 +35,13 @@ class LoginController: UIViewController {
             txtUsername.isEnabled = true
             txtPassword.isEnabled = true
             btnLogin.isEnabled = true
+            // TODO: Read from offline json
             imgBanner.image = #imageLiteral(resourceName: "TestServerImage")
-            lblWelcomeText.text = "Welcome to Setsuna! The Setsuna server is currently not available, and functions may not work as expected."
-            lblWelcomeText.sizeToFit()
+            navItem.title = "Setsuna Offline"
+            lblWelcomeText.text = "Welcome to Setsuna! You are currently using the Setsuna offline server, and some features may be unavailable."
         }
+        lblWelcomeText.sizeToFit()
+        super.viewDidLoad()
     }
     
     override func didReceiveMemoryWarning() {
@@ -59,6 +61,7 @@ class LoginController: UIViewController {
     }
     
     @IBAction func signIn(_ sender: Any) {
+        // TODO: Use server auth
         if (self.txtUsername.text == "staff" && self.txtPassword.text == "staff") {
             self.performSegue(withIdentifier: "signInStaff", sender: self)
         } else if (self.txtUsername.text == "student1" && self.txtPassword.text == "student") {

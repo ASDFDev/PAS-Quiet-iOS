@@ -2,17 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "PAS.004.png",
+      "filename" : "PASAbout.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "PAS.004-1.png",
+      "filename" : "PASAbout-1.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "PAS.004-2.png",
+      "filename" : "PASAbout-2.png",
       "scale" : "3x"
     }
   ],

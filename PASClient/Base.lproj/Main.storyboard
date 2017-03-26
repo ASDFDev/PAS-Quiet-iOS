@@ -13,7 +13,7 @@
         <scene sceneID="te4-Zj-M29">
             <objects>
                 <navigationController id="er2-Bd-9RU" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" barStyle="black" id="lFI-Kx-cii">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="lFI-Kx-cii">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="1" green="1" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
@@ -98,7 +98,7 @@
             <objects>
                 <navigationController id="gvh-Uj-ZcJ" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Administrate" id="rRT-Vp-VRu"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" barStyle="black" id="grY-p6-LN2">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="grY-p6-LN2">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="1" green="1" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
@@ -203,7 +203,7 @@
         <scene sceneID="lOa-pM-GAi">
             <objects>
                 <navigationController id="QYx-lH-nPf" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" barStyle="black" id="J9N-b9-NFd">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="J9N-b9-NFd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="1" green="1" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
@@ -220,8 +220,8 @@
         <!--Navigation Controller-->
         <scene sceneID="gq9-TD-aao">
             <objects>
-                <navigationController id="mlM-mn-WVW" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" barStyle="black" id="bw6-8J-OqG">
+                <navigationController modalTransitionStyle="crossDissolve" id="mlM-mn-WVW" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="bw6-8J-OqG">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="1" green="1" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
@@ -262,7 +262,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qbu-KS-4fc">
                                 <rect key="frame" x="16" y="629" width="343" height="30"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                <state key="normal" title="Continue anyway">
+                                <state key="normal" title="Use offline">
                                     <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
@@ -297,7 +297,7 @@
             </objects>
             <point key="canvasLocation" x="-460" y="-1455"/>
         </scene>
-        <!--Setsuna Attendance-->
+        <!--Login Controller-->
         <scene sceneID="g4k-eA-dWj">
             <objects>
                 <viewController modalTransitionStyle="crossDissolve" id="mzK-PM-GNM" customClass="LoginController" customModule="SetsunaClient" customModuleProvider="target" sceneMemberID="viewController">
@@ -331,8 +331,8 @@
                                     <action selector="signIn:" destination="mzK-PM-GNM" eventType="touchUpInside" id="Jma-Kh-5nr"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Welcome to Setsuna! Please wait while we try to connect to a Setsuna-enabled server..." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a7A-Ty-Anp">
-                                <rect key="frame" x="16" y="324" width="343" height="67"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Connecting..." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a7A-Ty-Anp">
+                                <rect key="frame" x="16" y="324" width="343" height="19"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -346,11 +346,12 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="tintColor" red="1" green="0.40000000000000002" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Setsuna Attendance" id="9J7-qb-dKx"/>
+                    <navigationItem key="navigationItem" id="9J7-qb-dKx"/>
                     <connections>
                         <outlet property="btnLogin" destination="s8D-dQ-HXS" id="9Ff-Wv-zKw"/>
                         <outlet property="imgBanner" destination="ywJ-jB-9Bn" id="1HQ-TR-KNj"/>
                         <outlet property="lblWelcomeText" destination="a7A-Ty-Anp" id="Z0e-Bn-j0V"/>
+                        <outlet property="navItem" destination="9J7-qb-dKx" id="5gL-lS-w3J"/>
                         <outlet property="txtPassword" destination="DuK-Xm-8XB" id="c9K-W0-xOG"/>
                         <outlet property="txtUsername" destination="jjr-NC-lUz" id="5f8-KE-eG3"/>
                         <segue destination="er2-Bd-9RU" kind="showDetail" identifier="signInStaff" id="L0h-p5-xCV"/>
@@ -368,7 +369,7 @@
             <objects>
                 <navigationController id="DVa-tg-Lc8" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Receive" id="c2H-3a-P47"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" barStyle="black" id="Lua-rb-GgF">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="Lua-rb-GgF">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="1" green="1" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
